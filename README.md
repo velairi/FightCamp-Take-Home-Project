@@ -12,7 +12,7 @@ Replicate the FightCamp package selection (webpage) into a native iOS App using 
 
 ## Goals 
 
-There is 3 packages available:
+There are 3 packages available:
 
 - FightCamp Personal
 - FightCamp Tribe
@@ -28,7 +28,7 @@ In this case, we should be able to easily change the code so we can test another
 Have the thumbnails section interactive; possibility to change the preview image by tapping on one of the 4 thumbnails.
 
 #### Goal level 3
-Every packages (3/3) are displayed on the screen and embedded into a vertical scroll view. It's possible to look at each of 3 packages by scrolling up/down.
+Every package (3/3) are displayed on the screen and embedded into a vertical scroll view. It's possible to look at each of 3 packages by scrolling up/down.
 
 ## Requirements
 
@@ -55,7 +55,7 @@ Create a small README with the following items:
 * What is missing and why. (if applicable)
 * Any other information you believe is necessary for us to know about the issue/solution.
 
-Once completed, email us a link to your forked GitHub repo.
+Once completed, email us a Zipped version of your Xcode project with all source files.
 
 ## Time allotment 
 
@@ -63,7 +63,7 @@ It should take aproximately 2-3 hours to complete **Goal level 1**.
 
 An additional work hour can be expected in order to complete **Goal level 2 & 3**.
 
-A maximum of 24 hours is given to the candidate to submit the link to the forked repo. 
+A maximum of 24 hours is given to the candidate to submit the zipped project. 
 
 ## Evaluation
 

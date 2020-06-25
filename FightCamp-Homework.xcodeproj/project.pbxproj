@@ -13,9 +13,9 @@
 		C1BD978F249AC0790044B734 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD978E249AC0790044B734 /* Colors.swift */; };
 		C1BD9791249AC0810044B734 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD9790249AC0810044B734 /* Fonts.swift */; };
 		C1BD9793249AC3620044B734 /* packages.json in Resources */ = {isa = PBXBuildFile; fileRef = C1BD9792249AC3620044B734 /* packages.json */; };
-		C1BD979E249AFFCC0044B734 /* Graphik-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1BD979C249AFF290044B734 /* Graphik-Medium.otf */; };
-		C1BD979F249AFFCC0044B734 /* Graphik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1BD979D249AFF290044B734 /* Graphik-Regular.otf */; };
-		C1BD97A0249AFFCC0044B734 /* Grotesk-Square.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1BD979B249AFF290044B734 /* Grotesk-Square.otf */; };
+		C1BD979E249AFFCC0044B734 /* Font-2.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1BD979C249AFF290044B734 /* Font-2.otf */; };
+		C1BD979F249AFFCC0044B734 /* Font-3.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1BD979D249AFF290044B734 /* Font-3.otf */; };
+		C1BD97A0249AFFCC0044B734 /* Font-1.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1BD979B249AFF290044B734 /* Font-1.otf */; };
 		C1FD02AD249B23F30029487C /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD02AC249B23F30029487C /* Layout.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,9 +28,9 @@
 		C1BD978E249AC0790044B734 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C1BD9790249AC0810044B734 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C1BD9792249AC3620044B734 /* packages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = packages.json; sourceTree = "<group>"; };
-		C1BD979B249AFF290044B734 /* Grotesk-Square.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Grotesk-Square.otf"; sourceTree = "<group>"; };
-		C1BD979C249AFF290044B734 /* Graphik-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Medium.otf"; sourceTree = "<group>"; };
-		C1BD979D249AFF290044B734 /* Graphik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Regular.otf"; sourceTree = "<group>"; };
+		C1BD979B249AFF290044B734 /* Font-1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font-1.otf"; sourceTree = "<group>"; };
+		C1BD979C249AFF290044B734 /* Font-2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font-2.otf"; sourceTree = "<group>"; };
+		C1BD979D249AFF290044B734 /* Font-3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font-3.otf"; sourceTree = "<group>"; };
 		C1FD02AC249B23F30029487C /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,9 +78,9 @@
 		C1BD979A249AFF0C0044B734 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				C1BD979C249AFF290044B734 /* Graphik-Medium.otf */,
-				C1BD979D249AFF290044B734 /* Graphik-Regular.otf */,
-				C1BD979B249AFF290044B734 /* Grotesk-Square.otf */,
+				C1BD979C249AFF290044B734 /* Font-2.otf */,
+				C1BD979D249AFF290044B734 /* Font-3.otf */,
+				C1BD979B249AFF290044B734 /* Font-1.otf */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -155,9 +155,9 @@
 			files = (
 				C1BD9793249AC3620044B734 /* packages.json in Resources */,
 				C1BD9783249AC04E0044B734 /* Assets.xcassets in Resources */,
-				C1BD979E249AFFCC0044B734 /* Graphik-Medium.otf in Resources */,
-				C1BD979F249AFFCC0044B734 /* Graphik-Regular.otf in Resources */,
-				C1BD97A0249AFFCC0044B734 /* Grotesk-Square.otf in Resources */,
+				C1BD979E249AFFCC0044B734 /* Font-2.otf in Resources */,
+				C1BD979F249AFFCC0044B734 /* Font-3.otf in Resources */,
+				C1BD97A0249AFFCC0044B734 /* Font-1.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

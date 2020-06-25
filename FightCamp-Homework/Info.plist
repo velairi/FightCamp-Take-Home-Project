@@ -22,9 +22,9 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Graphik-Medium.otf</string>
-		<string>Graphik-Regular.otf</string>
-		<string>Grotesk-Square.otf</string>
+		<string>Font-1.otf</string>
+		<string>Font-2.otf</string>
+		<string>Font-3.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
