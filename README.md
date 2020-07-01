@@ -28,13 +28,13 @@ In this case, we should be able to easily change the code so we can test another
 Have the thumbnails section interactive; possibility to change the preview image by tapping on one of the 4 thumbnails.
 
 #### Goal level 3
-Every package (3/3) are displayed on the screen and embedded into a vertical scroll view. It's possible to look at each of 3 packages by scrolling up/down.
+Every package (3/3) are displayed on the screen and embedded into a vertical scroll view (UIScrollView, UITableView or UICollectionView). It's possible to look at each of 3 packages by scrolling up/down.
 
 ## Requirements
 
 - Must compile
 - Swift (no Obj-c)
-- UIKit (Not ready to SwiftUI yet!)
+- UIKit (not ready to SwiftUI yet!)
 - No storyboard or nibs - everything programmatically (Autolayout or frame)
 - We recommend MVVM achitecture (even considering the small size of the app)
 - Light & dark mode compatible
