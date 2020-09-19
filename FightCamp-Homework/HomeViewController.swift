@@ -23,9 +23,8 @@ class HomeViewController: UIViewController {
         }
 
         func configureScrollView() {
-            scrollView.backgroundColor = .gray
+            scrollView.backgroundColor = .secondaryBackground
             view.addSubview(scrollView)
-            view.addSubview(scrollView) //?
             scrollView.translatesAutoresizingMaskIntoConstraints = false;
 
             //Constrain scroll view
@@ -51,7 +50,6 @@ class HomeViewController: UIViewController {
             scrollContentView.addSubview(packageView)
             packageView.translatesAutoresizingMaskIntoConstraints = false
             packageView.layer.cornerRadius = 12
-            packageView.backgroundColor = .white
             packageView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 24).isActive = true;
             packageView.topAnchor.constraint(equalTo: scrollContentView.topAnchor).isActive = true;
             packageView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true;
@@ -64,7 +62,6 @@ class HomeViewController: UIViewController {
             scrollContentView.addSubview(packageView2)
             packageView2.translatesAutoresizingMaskIntoConstraints = false
             packageView2.layer.cornerRadius = 12
-            packageView2.backgroundColor = .white
             packageView2.topAnchor.constraint(equalTo: packageView.bottomAnchor, constant: 24).isActive = true;
             packageView2.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 24).isActive = true;
             packageView2.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true;
