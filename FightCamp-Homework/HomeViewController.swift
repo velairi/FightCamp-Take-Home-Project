@@ -10,36 +10,67 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    var packageView = PackageView()
-    var scrollView = UIScrollView()
+        var scrollView = UIScrollView()
+        let scrollContentView = UIView()
+        let packageView = PackageView()
+        let packageView2 = PackageView()
 
-    let scrollContentView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            configureScrollView()
+            configurePackageView1()
+            configurePackageView2()
+        }
 
-    override func loadView() {
-        super.loadView()
-        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 3)
-        scrollView.autoresizingMask = .flexibleHeight
-        scrollView.contentOffset.x = 0
-        view.addSubview(scrollView)
-        scrollView.addSubview(scrollContentView)
-        view.backgroundColor = .secondaryBackground
-        addPackageView1()
+        func configureScrollView() {
+            scrollView.backgroundColor = .gray
+            view.addSubview(scrollView)
+            view.addSubview(scrollView) //?
+            scrollView.translatesAutoresizingMaskIntoConstraints = false;
+
+            //Constrain scroll view
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true;
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true;
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true;
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true;
+
+
+            //add scrollContentView
+            scrollView.addSubview(scrollContentView)
+            scrollContentView.translatesAutoresizingMaskIntoConstraints = false
+
+            //constrain scrollContentView to scrollView
+            scrollContentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true;
+            scrollContentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true;
+            scrollContentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true;
+            scrollContentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true;
+        }
+
+        func configurePackageView1() {
+            //add packageView to scrollContentView
+            scrollContentView.addSubview(packageView)
+            packageView.translatesAutoresizingMaskIntoConstraints = false
+            packageView.layer.cornerRadius = 12
+            packageView.backgroundColor = .white
+            packageView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 24).isActive = true;
+            packageView.topAnchor.constraint(equalTo: scrollContentView.topAnchor).isActive = true;
+            packageView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true;
+            packageView.heightAnchor.constraint(equalToConstant: view.frame.height - 72).isActive = true
+            packageView.widthAnchor.constraint(equalToConstant: view.frame.width - 48).isActive = true
+        }
+
+        func configurePackageView2() {
+            //add packageView2 to scrollContentView
+            scrollContentView.addSubview(packageView2)
+            packageView2.translatesAutoresizingMaskIntoConstraints = false
+            packageView2.layer.cornerRadius = 12
+            packageView2.backgroundColor = .white
+            packageView2.topAnchor.constraint(equalTo: packageView.bottomAnchor, constant: 24).isActive = true;
+            packageView2.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 24).isActive = true;
+            packageView2.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true;
+            packageView2.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true;
+            packageView2.heightAnchor.constraint(equalToConstant: view.frame.height - 72).isActive = true
+            packageView2.widthAnchor.constraint(equalToConstant: view.frame.width - 48).isActive = true
+        }
     }
 
-    func addPackageView1() {
-        packageView.backgroundColor = .white
-        packageView.translatesAutoresizingMaskIntoConstraints = false
-        packageView.layer.cornerRadius = 12
-        view.addSubview(packageView)
-        NSLayoutConstraint.activate([
-            packageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 24),
-            packageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 24),
-            packageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -24),
-            packageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -24)
-        ])
-    }
-}
