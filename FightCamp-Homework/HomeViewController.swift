@@ -10,15 +10,18 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    var viewModel = PackageViewModel()
     var scrollView = UIScrollView()
     let scrollContentView = UIView()
     let packageView = PackageView()
     let packageView2 = PackageView()
     let packageView3 = PackageView()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.fetchData("packages")
+        print(viewModel.packages)
+
         configureScrollView()
         configurePackageView1()
         configurePackageView2()
