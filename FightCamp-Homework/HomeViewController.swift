@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     let scrollContentView = UIView()
     let packageView = PackageView()
     let packageView2 = PackageView()
+    let packageView3 = PackageView()
 
 
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class HomeViewController: UIViewController {
         configureScrollView()
         configurePackageView1()
         configurePackageView2()
+        configurePackageView3()
     }
 
     func configureScrollView() {
@@ -69,6 +71,18 @@ class HomeViewController: UIViewController {
         packageView2.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true;
         packageView2.heightAnchor.constraint(equalToConstant: view.frame.height - 72).isActive = true
         packageView2.widthAnchor.constraint(equalToConstant: view.frame.width - 48).isActive = true
+    }
+
+    func configurePackageView3() {
+        scrollView.addSubview(packageView3)
+        packageView3.translatesAutoresizingMaskIntoConstraints = false
+        packageView3.layer.cornerRadius = 12
+        packageView3.topAnchor.constraint(equalTo: packageView2.bottomAnchor, constant: 24).isActive = true;
+        packageView3.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 24).isActive = true;
+        packageView3.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true;
+        packageView3.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true;
+        packageView3.heightAnchor.constraint(equalToConstant: view.frame.height - 72).isActive = true
+        packageView3.widthAnchor.constraint(equalToConstant: view.frame.width - 48).isActive = true
     }
 }
 
