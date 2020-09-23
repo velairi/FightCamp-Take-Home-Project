@@ -1,6 +1,5 @@
 ## FightCamp take home (iOS) 🥊
 
-Hey! Congratulations on making it to the next step in the interview process. We look forward to having you potentially join the FightCamp family!
 
 ## Expectations
 
