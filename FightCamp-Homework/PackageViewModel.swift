@@ -19,7 +19,7 @@ class PackageViewModel {
             let object = try decoder.decode([Package].self, from: data)
             packages = object
         } catch {
-            print("ERROR", error)
+            print("JSON Parsing Error", error)
         }
     }
 
@@ -29,10 +29,9 @@ class PackageViewModel {
                 let fileUrl = URL(fileURLWithPath: path)
                 // Getting data from JSON file using the file URL
                 let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
-                print("MY DATA", data)
                 parsePackagesJSON(data)
             } catch {
-                // Handle error here
+                print("Data Fetching Error", error)
             }
         }
     }
