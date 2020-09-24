@@ -37,7 +37,6 @@ class PackageView: UIView {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = true
-        imageView.image = #imageLiteral(resourceName: "fc-products-family-setup-1")
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -47,7 +46,6 @@ class PackageView: UIView {
         let button = UIButton()
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
-        button.setImage(#imageLiteral(resourceName: "fc-products-family-setup-1"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         button.translatesAutoresizingMaskIntoConstraints = false
         button.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -59,7 +57,6 @@ class PackageView: UIView {
         let button = UIButton()
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
-        button.setImage(#imageLiteral(resourceName: "fc-products-bag-4"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         button.translatesAutoresizingMaskIntoConstraints = false
         button.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -71,7 +68,6 @@ class PackageView: UIView {
         let button = UIButton()
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
-        button.setImage(#imageLiteral(resourceName: "fc-products-trackers-4"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         button.translatesAutoresizingMaskIntoConstraints = false
         button.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -83,7 +79,6 @@ class PackageView: UIView {
         let button = UIButton()
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
-        button.setImage(#imageLiteral(resourceName: "fc-products-wraps-3"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         button.translatesAutoresizingMaskIntoConstraints = false
         button.autoresizingMask = [.flexibleWidth, .flexibleHeight]

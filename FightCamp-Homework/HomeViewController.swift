@@ -66,13 +66,13 @@ class HomeViewController: UIViewController {
         packageView.descriptionLabel.text = package.desc
 
         //Add images to buttons and hero imageView
-        packageView.thumbnail1.imageView?.load(URL(string: "package.thumbnailUrl[0]")!)
-        packageView.thumbnail2.imageView?.load(URL(string: "package.thumbnailUrl[1]")!)
-        packageView.thumbnail3.imageView?.load(URL(string: "package.thumbnailUrl[2]")!)
-        packageView.thumbnail4.imageView?.load(URL(string: "package.thumbnailUrl[3]")!)
-        packageView.heroImageView.image = packageView.thumbnail1.imageView?.image
+        packageView.heroImageView.load(URL(string: "\(package.thumbnailUrls[0])")!)
+        packageView.thumbnail1.load(URL(string: "\(package.thumbnailUrls[0])")!)
+        packageView.thumbnail2.load(URL(string: "\(package.thumbnailUrls[1])")!)
+        packageView.thumbnail3.load(URL(string: "\(package.thumbnailUrls[2])")!)
+        packageView.thumbnail4.load(URL(string: "\(package.thumbnailUrls[3])")!)
 
-        //Add to what's included label
+        //TO DO: Attributed text for different font colors
         packageView.whatsIncludedLabel.text = package.included.joined(separator: "\n").capitalized
         if let excluded = package.excluded?.joined(separator: "\n").capitalized {
             packageView.whatsIncludedLabel.text! += excluded
@@ -101,13 +101,13 @@ class HomeViewController: UIViewController {
         packageView2.descriptionLabel.text = package.desc
 
         //Add images to buttons and hero imageView
-        packageView2.thumbnail1.imageView?.load(URL(string: "package.thumbnailUrl[0]")!)
-        packageView2.thumbnail2.imageView?.load(URL(string: "package.thumbnailUrl[1]")!)
-        packageView2.thumbnail3.imageView?.load(URL(string: "package.thumbnailUrl[2]")!)
-        packageView2.thumbnail4.imageView?.load(URL(string: "package.thumbnailUrl[3]")!)
-        packageView2.heroImageView.image = packageView.thumbnail1.imageView?.image
+        packageView2.heroImageView.load(URL(string: "\(package.thumbnailUrls[0])")!)
+        packageView2.thumbnail1.load(URL(string: "\(package.thumbnailUrls[0])")!)
+        packageView2.thumbnail2.load(URL(string: "\(package.thumbnailUrls[1])")!)
+        packageView2.thumbnail3.load(URL(string: "\(package.thumbnailUrls[2])")!)
+        packageView2.thumbnail4.load(URL(string: "\(package.thumbnailUrls[3])")!)
 
-        //Add to what's included label
+        //TO DO: Attributed text for different font colors
         packageView2.whatsIncludedLabel.text = package.included.joined(separator: "\n").capitalized
         if let excluded = package.excluded?.joined(separator: "\n").capitalized {
             packageView2.whatsIncludedLabel.text! += excluded
@@ -135,13 +135,13 @@ class HomeViewController: UIViewController {
         packageView3.descriptionLabel.text = package.desc
 
         //Add images to buttons and hero imageView
-        packageView3.thumbnail1.imageView?.load(URL(string: "package.thumbnailUrl[0]")!)
-        packageView3.thumbnail2.imageView?.load(URL(string: "package.thumbnailUrl[1]")!)
-        packageView3.thumbnail3.imageView?.load(URL(string: "package.thumbnailUrl[2]")!)
-        packageView3.thumbnail4.imageView?.load(URL(string: "package.thumbnailUrl[3]")!)
-        packageView3.heroImageView.image = packageView.thumbnail1.imageView?.image
+        packageView3.heroImageView.load(URL(string: "\(package.thumbnailUrls[0])")!)
+        packageView3.thumbnail1.load(URL(string: "\(package.thumbnailUrls[0])")!)
+        packageView3.thumbnail2.load(URL(string: "\(package.thumbnailUrls[1])")!)
+        packageView3.thumbnail3.load(URL(string: "\(package.thumbnailUrls[2])")!)
+        packageView3.thumbnail4.load(URL(string: "\(package.thumbnailUrls[3])")!)
 
-        //Add to what's included label
+        //TO DO: Attributed text for different font colors
         packageView3.whatsIncludedLabel.text = package.included.joined(separator: "\n").capitalized
         if let excluded = package.excluded?.joined(separator: "\n").capitalized {
             packageView3.whatsIncludedLabel.text! += excluded
@@ -160,6 +160,20 @@ extension UIImageView {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}
+
+extension UIButton {
+    func load(_ url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.setImage(image, for: .normal)
                     }
                 }
             }
