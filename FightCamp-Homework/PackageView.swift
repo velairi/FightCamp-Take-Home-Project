@@ -121,8 +121,7 @@ class PackageView: UIView {
         label.text = text
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.font = .price
-        label.textAlignment = .center
+        label.font = .body
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

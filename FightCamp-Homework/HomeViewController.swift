@@ -78,7 +78,7 @@ class HomeViewController: UIViewController {
             packageView.whatsIncludedLabel.text! += excluded
         }
 
-        packageView.priceLabel.text = "One Time Payment \n $\(package.price)"
+        packageView.priceLabel.configurePriceLabel(package.price)
         packageView.viewPackageButton.titleLabel?.text = package.action
     }
 
@@ -113,7 +113,7 @@ class HomeViewController: UIViewController {
             packageView2.whatsIncludedLabel.text! += excluded
         }
 
-        packageView2.priceLabel.text = "One Time Payment \n $\(package.price)"
+        packageView2.priceLabel.configurePriceLabel(package.price)
         packageView2.viewPackageButton.titleLabel?.text = package.action
     }
 
@@ -147,13 +147,34 @@ class HomeViewController: UIViewController {
             packageView3.whatsIncludedLabel.text! += excluded
         }
 
-        packageView3.priceLabel.text = "One Time Payment \n $\(package.price)"
+        packageView3.priceLabel.configurePriceLabel(package.price)
         packageView3.viewPackageButton.titleLabel?.text = package.action
     }
 }
 
-extension UIImageView {
+extension UILabel {
 
+    func configurePriceLabel(_ price: Int) {
+        let attr1 = [NSAttributedString.Key.font: UIFont.body]
+        let str1 = NSMutableAttributedString(string:"One Time Payment")
+        str1.addAttributes(attr1, range: NSRange(location: 0, length: str1.length))
+
+        let attr2 = [NSAttributedString.Key.font: UIFont.price]
+        let str2 = NSMutableAttributedString(string:"\n $\(price)")
+        str2.addAttributes(attr2, range: NSRange(location: 0, length: str2.length))
+
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+
+        str1.append(str2)
+        str1.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: str1.length))
+
+        self.attributedText = str1
+        self.textAlignment = .center
+    }
+}
+
+extension UIImageView {
     func load(_ url: URL) {
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url) {
