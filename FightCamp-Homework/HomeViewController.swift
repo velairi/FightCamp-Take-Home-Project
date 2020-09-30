@@ -74,7 +74,7 @@ class HomeViewController: UIViewController {
         packageView.whatsIncludedLabel.configureWhatsIncludedLabel(package.included, excludedText: package.excluded)
 
         packageView.priceLabel.configurePriceLabel(package.price)
-        packageView.viewPackageButton.titleLabel?.text = package.action
+        packageView.viewPackageButton.setTitle("\(package.action)".capitalized, for: .normal)
     }
 
     func configurePackageView2() {
@@ -105,7 +105,7 @@ class HomeViewController: UIViewController {
 
 
         packageView2.priceLabel.configurePriceLabel(package.price)
-        packageView2.viewPackageButton.titleLabel?.text = package.action
+        packageView2.viewPackageButton.setTitle("\(package.action)".capitalized, for: .normal)
     }
 
     func configurePackageView3() {
@@ -134,7 +134,7 @@ class HomeViewController: UIViewController {
         packageView3.whatsIncludedLabel.configureWhatsIncludedLabel(package.included, excludedText: package.excluded)
 
         packageView3.priceLabel.configurePriceLabel(package.price)
-        packageView3.viewPackageButton.titleLabel?.text = package.action
+        packageView3.viewPackageButton.setTitle("\(package.action)".capitalized, for: .normal)
     }
 }
 
