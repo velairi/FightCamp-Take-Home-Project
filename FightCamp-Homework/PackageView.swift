@@ -10,6 +10,8 @@ import UIKit
 
 class PackageView: UIView {
 
+    var selectedThumbnail = UIButton()
+
     var packageTypeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +37,8 @@ class PackageView: UIView {
 
     var thumbnail1: UIButton = {
         let button = UIButton()
+        button.layer.borderWidth = 4
+        button.layer.borderColor = UIColor.thumbnailBorder(selected: true).cgColor
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
         button.imageView?.contentMode = .scaleAspectFill
@@ -46,6 +50,8 @@ class PackageView: UIView {
 
     var thumbnail2: UIButton = {
         let button = UIButton()
+        button.layer.borderWidth = 4
+        button.layer.borderColor = UIColor.thumbnailBorder(selected: false).cgColor
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
         button.imageView?.contentMode = .scaleAspectFill
@@ -57,6 +63,8 @@ class PackageView: UIView {
 
     var thumbnail3: UIButton = {
         let button = UIButton()
+        button.layer.borderWidth = 4
+        button.layer.borderColor = UIColor.thumbnailBorder(selected: false).cgColor
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
         button.imageView?.contentMode = .scaleAspectFill
@@ -68,6 +76,8 @@ class PackageView: UIView {
 
     var thumbnail4: UIButton = {
         let button = UIButton()
+        button.layer.borderWidth = 4
+        button.layer.borderColor = UIColor.thumbnailBorder(selected: false).cgColor
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
         button.imageView?.contentMode = .scaleAspectFill
@@ -128,6 +138,7 @@ class PackageView: UIView {
         configureWhatsIncludedLabel()
         configurePriceLabel()
         configureViewPackageButton()
+        selectedThumbnail = thumbnail1
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -215,17 +226,29 @@ class PackageView: UIView {
 
     @objc func thumbnail1DidPress() {
         heroImageView.image = thumbnail1.imageView?.image
+        thumbnail1.layer.borderColor = UIColor.thumbnailBorder(selected: true).cgColor
+        selectedThumbnail.layer.borderColor = UIColor.thumbnailBorder(selected: false).cgColor
+        selectedThumbnail = thumbnail1
     }
 
     @objc func thumbnail2DidPress() {
         heroImageView.image = thumbnail2.imageView?.image
+        thumbnail2.layer.borderColor = UIColor.thumbnailBorder(selected: true).cgColor
+        selectedThumbnail.layer.borderColor = UIColor.thumbnailBorder(selected: false).cgColor
+        selectedThumbnail = thumbnail2
     }
 
     @objc func thumbnail3DidPress() {
         heroImageView.image = thumbnail3.imageView?.image
+        thumbnail3.layer.borderColor = UIColor.thumbnailBorder(selected: true).cgColor
+        selectedThumbnail.layer.borderColor = UIColor.thumbnailBorder(selected: false).cgColor
+        selectedThumbnail = thumbnail3
     }
 
     @objc func thumbnail4DidPress() {
         heroImageView.image = thumbnail4.imageView?.image
+        thumbnail4.layer.borderColor = UIColor.thumbnailBorder(selected: true).cgColor
+        selectedThumbnail.layer.borderColor = UIColor.thumbnailBorder(selected: false).cgColor
+        selectedThumbnail = thumbnail4
     }
 }
