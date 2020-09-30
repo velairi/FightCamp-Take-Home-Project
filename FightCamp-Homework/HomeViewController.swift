@@ -71,11 +71,7 @@ class HomeViewController: UIViewController {
         packageView.thumbnail3.load(URL(string: "\(package.thumbnailUrls[2])")!)
         packageView.thumbnail4.load(URL(string: "\(package.thumbnailUrls[3])")!)
 
-        //TO DO: Attributed text for different font colors
-        packageView.whatsIncludedLabel.text = package.included.joined(separator: "\n").capitalized
-        if let excluded = package.excluded?.joined(separator: "\n").capitalized {
-            packageView.whatsIncludedLabel.text! += excluded
-        }
+        packageView.whatsIncludedLabel.configureWhatsIncludedLabel(package.included, excludedText: package.excluded)
 
         packageView.priceLabel.configurePriceLabel(package.price)
         packageView.viewPackageButton.titleLabel?.text = package.action
@@ -105,11 +101,8 @@ class HomeViewController: UIViewController {
         packageView2.thumbnail3.load(URL(string: "\(package.thumbnailUrls[2])")!)
         packageView2.thumbnail4.load(URL(string: "\(package.thumbnailUrls[3])")!)
 
-        //TO DO: Attributed text for different font colors
-        packageView2.whatsIncludedLabel.text = package.included.joined(separator: "\n").capitalized
-        if let excluded = package.excluded?.joined(separator: "\n").capitalized {
-            packageView2.whatsIncludedLabel.text! += excluded
-        }
+        packageView2.whatsIncludedLabel.configureWhatsIncludedLabel(package.included, excludedText: package.excluded)
+
 
         packageView2.priceLabel.configurePriceLabel(package.price)
         packageView2.viewPackageButton.titleLabel?.text = package.action
@@ -138,11 +131,7 @@ class HomeViewController: UIViewController {
         packageView3.thumbnail3.load(URL(string: "\(package.thumbnailUrls[2])")!)
         packageView3.thumbnail4.load(URL(string: "\(package.thumbnailUrls[3])")!)
 
-        //TO DO: Attributed text for different font colors
-        packageView3.whatsIncludedLabel.text = package.included.joined(separator: "\n").capitalized
-        if let excluded = package.excluded?.joined(separator: "\n").capitalized {
-            packageView3.whatsIncludedLabel.text! += excluded
-        }
+        packageView3.whatsIncludedLabel.configureWhatsIncludedLabel(package.included, excludedText: package.excluded)
 
         packageView3.priceLabel.configurePriceLabel(package.price)
         packageView3.viewPackageButton.titleLabel?.text = package.action
@@ -161,13 +150,40 @@ extension UILabel {
         str2.addAttributes(attr2, range: NSRange(location: 0, length: str2.length))
 
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 4
+        paragraphStyle.lineSpacing = 8
 
         str1.append(str2)
         str1.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: str1.length))
 
         self.attributedText = str1
         self.textAlignment = .center
+    }
+
+    func configureWhatsIncludedLabel(_ includedText: [String], excludedText: [String]?) {
+        let includedStr = includedText.joined(separator: "\n").capitalized
+        let excludedStr = excludedText?.joined(separator: "\n").capitalized ?? ""
+
+        let fontTypeAttr1 = [NSAttributedString.Key.font: UIFont.body]
+        let str1 = NSMutableAttributedString(string: includedStr)
+        str1.addAttributes(fontTypeAttr1, range: NSRange(location: 0, length: str1.length))
+
+        let str2 = NSMutableAttributedString(string: "\n\(excludedStr)")
+        str2.addAttributes(fontTypeAttr1, range: NSRange(location: 0, length: str2.length))
+
+        //Change color
+        str2.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.disabledLabel, range: NSRange(location: 0, length: str2.length))
+
+        //Add Strikethrough
+        str2.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSRange(location: 0, length: str2.length))
+
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+
+        str1.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range:NSMakeRange(0, str1.length))
+
+        str1.append(str2)
+        self.attributedText = str1
+        self.textAlignment = .left
     }
 }
 
