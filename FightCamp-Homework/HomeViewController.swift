@@ -60,10 +60,9 @@ class HomeViewController: UIViewController {
         packageView.heightAnchor.constraint(equalToConstant: view.frame.height - 72).isActive = true
         packageView.widthAnchor.constraint(equalToConstant: view.frame.width - 48).isActive = true
 
-        //TO DO: capitalize package title
         let package = viewModel.packages[0]
-        packageView.packageTypeLabel.text = package.title
-        packageView.descriptionLabel.text = package.desc
+        packageView.packageTypeLabel.text = package.title.uppercased()
+        packageView.descriptionLabel.text = package.desc.capitalized
 
         //Add images to buttons and hero imageView
         packageView.heroImageView.load(URL(string: "\(package.thumbnailUrls[0])")!)
@@ -95,10 +94,9 @@ class HomeViewController: UIViewController {
         packageView2.heightAnchor.constraint(equalToConstant: view.frame.height - 72).isActive = true
         packageView2.widthAnchor.constraint(equalToConstant: view.frame.width - 48).isActive = true
 
-        //TO DO: capitalize package title
         let package = viewModel.packages[1]
-        packageView2.packageTypeLabel.text = package.title
-        packageView2.descriptionLabel.text = package.desc
+        packageView2.packageTypeLabel.text = package.title.uppercased()
+        packageView2.descriptionLabel.text = package.desc.capitalized
 
         //Add images to buttons and hero imageView
         packageView2.heroImageView.load(URL(string: "\(package.thumbnailUrls[0])")!)
@@ -129,10 +127,9 @@ class HomeViewController: UIViewController {
         packageView3.heightAnchor.constraint(equalToConstant: view.frame.height - 72).isActive = true
         packageView3.widthAnchor.constraint(equalToConstant: view.frame.width - 48).isActive = true
 
-        //TO DO: capitalize package title
         let package = viewModel.packages[2]
-        packageView3.packageTypeLabel.text = package.title
-        packageView3.descriptionLabel.text = package.desc
+        packageView3.packageTypeLabel.text = package.title.uppercased()
+        packageView3.descriptionLabel.text = package.desc.capitalized
 
         //Add images to buttons and hero imageView
         packageView3.heroImageView.load(URL(string: "\(package.thumbnailUrls[0])")!)
