@@ -12,23 +12,14 @@ class PackageView: UIView {
 
     var packageTypeLabel: UILabel = {
         let label = UILabel()
-        label.text = "FIGHTCAMP PERSONAL"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Everything you need to hit your goals."
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    var testLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Everything you need to hit your goals."
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -86,7 +77,6 @@ class PackageView: UIView {
         return button
     }()
 
-    //TO DO: Figure out how to adjust the stackView height dynamically
     var imageStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -98,27 +88,16 @@ class PackageView: UIView {
         return stackView
     }()
 
-    //TO DO: figure out how to use attributed string to adjust text like character strikethrough and gray colored font
     var whatsIncludedLabel: UILabel = {
         let label = UILabel()
-        let text = "Punch Trackers \nQuick Wraps \nFree-Standing Bag \nHeavy Workout Mat \nPremium Boxing Gloves \nAdditional Premium Boxing Gloves \nAdditional Quick Wraps \nKids Boxing Gloves"
-        let attributedString = NSMutableAttributedString(string: text)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 5
-        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
-        label.attributedText = attributedString
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.font = .body
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    //TO DO: figure out how to use attributed string to make fonts different sizes
     var priceLabel: UILabel = {
         let label = UILabel()
-        let text = "One Time Payment $1219"
-        label.text = text
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.font = .body
@@ -130,7 +109,6 @@ class PackageView: UIView {
         let button = UIButton()
         button.backgroundColor = .brandRed
         button.layer.cornerRadius = 4
-        button.setTitle("View Package", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.brandRed, for: .highlighted)
         button.isEnabled = true
@@ -251,5 +229,3 @@ class PackageView: UIView {
         heroImageView.image = thumbnail4.imageView?.image
     }
 }
-
-//TO DO: Make UI work for all devices
