@@ -1,5 +1,5 @@
 ## FightCamp take home (iOS) 🥊
-
+A replica of FightCamp package selection (webpage). Best viewed on iPhone 11 Pro Max
 
 ## Expectations
 
